@@ -1,13 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {
+  Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle, Button
+} from 'reactstrap';
 import Home from "./Home";
 
 
 function Day(props) {
   return (
     <React.Fragment>
-      <h3>{props.day} - {props.location}</h3>
-      <p>Time of day: {props.hours} , Booth: {props.booth}</p>
+      <Card>
+        <CardBody>
+          <CardTitle>{props.day} - {props.location}</CardTitle>
+          <CardSubtitle>Time of day: {props.hours}</CardSubtitle>
+          <CardText>Booth: {props.booth}</CardText>
+        </CardBody>
+      </Card>
     </React.Fragment>
   );
 };

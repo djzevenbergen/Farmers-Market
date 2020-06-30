@@ -6,7 +6,7 @@ function App() {
   return (
     <React.Fragment>
       <BaseControl />
-      <Produce />
+      {/* <Produce /> */}
     </React.Fragment>
   );
 }

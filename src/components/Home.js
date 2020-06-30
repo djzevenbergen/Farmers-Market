@@ -1,5 +1,6 @@
 import React from 'react';
 import Day from "./Day";
+import PropTypes from "prop-types";
 
 const marketSchedule = [
   {
@@ -40,19 +41,26 @@ const marketSchedule = [
   }
 ];
 
-function Home() {
+
+
+function Home(props) {
+  console.log(typeof (props.keyword));
+  console.log(marketSchedule[props.keyword].day);
+  //console.log(marketSchedule[0][day]);
   return (
     <React.Fragment>
       <hr />
-      {marketSchedule.map((scheduleItem, index) =>
-        <Day day={scheduleItem.day}
-          location={scheduleItem.location}
-          hours={scheduleItem.hours}
-          booth={scheduleItem.booth}
-          key={index} />
-      )}
+      {/* {marketSchedule.map((keyword) => */}
+      <Day day={marketSchedule[props.keyword].day}
+        location={marketSchedule[props.keyword].location}
+        hours={marketSchedule[props.keyword].hours}
+        booth={marketSchedule[props.keyword].booth}
+
+      />
+
     </React.Fragment>
   )
 }
+
 
 export default Home;
